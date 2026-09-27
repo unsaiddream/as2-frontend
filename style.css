@@ -152,3 +152,67 @@ main {
   text-align: center;
   background-color: #1f2937;
 }
+
+.gallery-section {
+  margin-top: 40px;
+}
+
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 15px;
+}
+
+.gallery-item {
+  position: relative;
+  margin: 0;
+  overflow: hidden;
+  border-radius: 8px;
+}
+
+.gallery-item img {
+  display: block;
+  width: 100%;
+  height: 160px;
+  object-fit: cover;
+
+  transition: transform 0.3s;
+}
+
+.gallery-item figcaption {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  left: 0;
+
+  padding: 12px;
+  color: white;
+  text-align: center;
+  background-color: rgba(0, 0, 0, 0.65);
+
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+.gallery-item:hover img {
+  transform: scale(1.1);
+}
+
+.gallery-item:hover figcaption {
+  opacity: 1;
+}
+
+@media (max-width: 700px) {
+  .gallery {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .grid-layout {
+    grid-template-columns: 1fr;
+    grid-template-areas:
+      "header"
+      "sidebar"
+      "main"
+      "footer";
+  }
+}
