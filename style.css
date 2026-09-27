@@ -109,3 +109,46 @@ main {
 .card-button:hover {
   background-color: #1d4ed8;
 }
+
+.grid-layout {
+  display: grid;
+
+  grid-template-columns: 220px 1fr;
+  grid-template-rows: auto 1fr auto;
+
+  grid-template-areas:
+    "header header"
+    "sidebar main"
+    "footer footer";
+
+  min-height: 80vh;
+  gap: 15px;
+  padding: 20px;
+}
+
+.grid-header {
+  grid-area: header;
+  padding: 20px;
+  color: white;
+  background-color: #2563eb;
+}
+
+.sidebar {
+  grid-area: sidebar;
+  padding: 20px;
+  background-color: #e5e7eb;
+}
+
+.grid-main {
+  grid-area: main;
+  padding: 20px;
+  background-color: #f9fafb;
+}
+
+.grid-footer {
+  grid-area: footer;
+  padding: 15px;
+  color: white;
+  text-align: center;
+  background-color: #1f2937;
+}
